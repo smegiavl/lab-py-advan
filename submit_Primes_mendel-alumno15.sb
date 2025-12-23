@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#SBATCH -p hpc-bio-mendel
+#SBATCH --chdir=/home/alumno15/Lab5
+#SBATCH -J Lab5-basic
+
+
+
+#Cargamos el modulo
+module load anaconda/2025.06
+
+NUMERO=$1
+
+export NUMBA_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+#Ejecutar notebook con ipython, indicando antes los parámetros introducidos
+echo "Ejecutando con numero: $NUMERO"
+echo "Numero CPUs a emplear: $SLURM_CPUS_PER_TASK"
+echo "Numero de hilos de NUMBA: $NUMBA_NUM_THREADS"
+
+ipython primes-par-alumno15.ipynb $NUMERO
+
+
+#Descargamos modulo
+module unload anaconda/2025.06
+
