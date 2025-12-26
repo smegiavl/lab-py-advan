@@ -1,0 +1,26 @@
+Numero CPUs a emplear: 4
+Numero de hilos de NUMBA: 4
+
+ 	 Computing pi in serial: 
+
+	 For 1000000 trials, pi = 3.142764
+
+631 ms ± 164 μs per loop (mean ± std. dev. of 3 runs, 1 loop each)
+
+ ---------------------- 
+
+
+ 	 Computing pi with multiprocessing: 
+
+	 For 1000000 trials, pi = 3.144164
+
+172 ms ± 23.7 μs per loop (mean ± std. dev. of 2 runs, 10 loops each)
+
+ ---------------------- 
+
+
+ 	 Computing pi (numba with prange): 
+
+	 For 1000000 trials, pi = 3.140576
+
+3.36 ms ± 2.1 μs per loop (mean ± std. dev. of 2 runs, 100 loops each)
